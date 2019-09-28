@@ -1,8 +1,11 @@
-package com.double.dd.file.cloud;
+package com.doubledd.file.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author kedong
+ */
 @SpringBootApplication
 public class FileCloudApplication {
 
