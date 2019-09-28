@@ -4,7 +4,7 @@ spring:
   mvc:
     static-path-pattern: /images/**
   resources:
-    static-locations: file:C://Users//XPS//Pictures/
+    static-locations: file:${settings.workspace}/
 
   liquibase:
     enabled: true
@@ -14,6 +14,12 @@ spring:
 server:
   servlet:
     context-path: /file
+
+settings:
+  workspace: C://Users//XPS//Pictures
+  upload-path: ${settings.workspace}//fileUpload
+  database-path: ~/.h2
+
 
 
 ---
@@ -26,7 +32,7 @@ spring:
       settings:
         web-allow-others: true
   datasource:
-    url: jdbc:h2:~/.h2/test
+    url: jdbc:h2:${settings.database-path}/file-cloud
     username: sa
     password: sa
     driver-class-name: org.h2.Driver
@@ -34,4 +40,5 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+
