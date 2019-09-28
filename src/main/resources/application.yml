@@ -1,6 +1,21 @@
 spring:
   profiles:
     active: dev
+  mvc:
+    static-path-pattern: /images/**
+  resources:
+    static-locations: file:C://Users//XPS//Pictures/
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+
+server:
+  servlet:
+    context-path: /file
+
+
 ---
 spring:
   profiles: dev
@@ -11,18 +26,12 @@ spring:
       settings:
         web-allow-others: true
   datasource:
-    url: jdbc:h2:~/h2/test
+    url: jdbc:h2:~/.h2/test
     username: sa
     password: sa
     driver-class-name: org.h2.Driver
     platform: h2
-#    data: classpath:db/data.sql
-#    schema: classpath:db/schema.sql
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-  mvc:
-    static-path-pattern: /images/**
-  resources:
-    static-locations: file:C://Users//XPS//Pictures/
