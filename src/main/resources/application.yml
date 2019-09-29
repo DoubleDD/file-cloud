@@ -15,7 +15,8 @@ server:
     context-path: /file
 
 settings:
-  workspace: C://Users//XPS//Pictures
+#  workspace: C://Users//XPS//Pictures
+  workspace: ~/Pictures
   upload-path: ${settings.workspace}//fileUpload
   database-path: ~/.h2
 
@@ -41,5 +42,5 @@ spring:
     hibernate:
       ddl-auto: none
   liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.xml
+    change-log: classpath:db/changelog/file/db.changelog-master.xml
 
